@@ -1,0 +1,47 @@
+.toolbar {
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  background-color: rgb(255, 255, 255);
+  z-index: 8;
+}
+
+.donated-logo {
+  vertical-align: middle;
+  padding-left: 10px;
+}
+
+.title {
+  white-space: normal;
+  line-height: 1.2;
+  text-decoration: inherit;
+  color: inherit;
+  font-size: 22px;
+}
+
+@media (min-width: 600px) {
+  .donated-logo {
+    max-height: 140px;
+    max-width: 140px;
+  }
+  .content-all-padding {
+    padding-top: 80px;
+  }
+}
+@media (max-width: 600px) {
+  .donated-logo {
+    max-height: 110px;
+    max-width: 110px;
+    padding-left: 10px
+  }
+  .content-all-padding {
+    padding-top: 70px;
+  }
+  .title {
+    font-size: 16px;
+  }
+}
+
+.content-all-padding-thin {
+  padding-top: 0px;
+}

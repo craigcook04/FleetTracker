@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name trolleyParts)(type Legacy)(uri ${KIPRJMOD}/trolleyParts.lib)(options "")(descr ""))
+  (lib (name trolleySchematic-eagle-import)(type Legacy)(uri ${KIPRJMOD}/trolleySchematic-eagle-import.lib)(options "")(descr ""))
+)

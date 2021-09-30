@@ -1,0 +1,19 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<meta name="viewport" content="initial-scale=0.1">
+
+<!-- Hatch header with a fixed position as you scroll -->
+<mat-toolbar *ngIf="!embed" class="toolbar mat-elevation-z8">
+  <a class="title" routerLink="/map" routerLinkActive="active">
+    Trolley&nbsp;Tracker
+  </a>
+  <div style="justify-content:flex-end;">
+    <a href="https://www.hatch.com/">
+      <img src="./assets/images/hatch.png" class="donated-logo" />
+    </a>
+  </div>
+</mat-toolbar>
+<!-- End Hatch header -->
+
+<div [ngClass]="embed ? 'content-all-padding-thin' : 'content-all-padding'">
+  <router-outlet></router-outlet>
+</div>

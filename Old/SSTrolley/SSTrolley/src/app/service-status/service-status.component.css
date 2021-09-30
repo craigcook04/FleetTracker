@@ -1,0 +1,24 @@
+
+.status-case {
+    margin-top:20px;
+    flex: 0 1 auto;
+    width: inherit;
+    display: flex;
+    height: 100%;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+.no-margin{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left:0px;
+    margin-right:0px;
+  
+  }
+  .no-padding{
+    padding: 0px 0px 0px 0px
+  }
+  

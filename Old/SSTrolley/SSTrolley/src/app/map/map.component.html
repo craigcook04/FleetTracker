@@ -1,0 +1,85 @@
+
+<link rel="stylesheet" href="https://openlayers.org/en/latest/css/ol.css" type="text/css">
+<div [ngClass]="embed ? 'mat-elevation-z2 map-case map-case-embed' : 'mat-elevation-z2 map-case'">
+    <div #mapImage [ngStyle]="{'cursor': mapCursor}" id="map-image" class="map-image" style=" position: static; left: 0px;">
+        <div #popupElement>
+            <div [hidden]="showPopup != PopupContent.Stop">
+                <mat-card *ngIf="selectedStop" class="tooltip-card">
+                    {{ selectedStop.name }}
+                </mat-card>
+            </div>
+            <div [hidden]="showPopup != PopupContent.Place">
+                <mat-card *ngIf="selectedPlace" class="tooltip-card">
+                    {{ selectedPlace.name }}
+                </mat-card>
+            </div>
+        </div>
+    </div>
+    <div #resetView class="reset-view ol-unselectable ol-control">
+        <button #resetButton>
+            <i class="material-icons">refresh</i>
+        </button>
+    </div>
+    <div [hidden]="showPopup != PopupContent.Stop" class="map-desc">
+        <mat-card *ngIf="selectedStop" class="mat-elevation-z0 info-card">
+            <table style="width:100%">
+                <tr>
+                    <td>
+                        <div style="font-weight: bold; float:left; justify-content:center">
+                        {{ selectedStop.name }}
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="grid" style="display: block">
+                            <div class="flex-grid" style="float:left; justify-content:center;display:flex; flex-direction: row; margin-top:10px; margin-bottom: 5px;">
+                                <div *ngIf="selectedStop.info" class="coli"><i class="material-icons" id="icons">access_time</i></div>
+                                <div *ngIf="selectedStop.info" class="col" style="padding-top:5px;">{{ selectedStop.info.clockTrolley }} </div>
+                                <div *ngIf="selectedStop.distanceFromUser" class="coli"><i class="material-icons" id="icons">directions_walk</i></div>
+                                <div *ngIf="selectedStop.distanceFromUser" class="col" style="padding-top:5px;">{{ (selectedStop.distanceFromUser/1000).toFixed(2) }} km</div>
+                                <div class="coli"><i class="material-icons" id="icons">place</i></div>
+                                <div class="col" style="padding-top:5px;">{{ selectedStop.address }}</div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div style= "float:left; justify-content:center;"> {{ selectedStop.additionalInfo }}</div>
+                    </td> 
+                </tr>
+            </table>
+        </mat-card>
+    </div>
+    <div [hidden]="showPopup != PopupContent.Place" class="map-desc">
+        <mat-card *ngIf="selectedPlace" class="mat-elevation-z0 info-card">
+            <table style="width:100%">
+                <tr>
+                    <td>
+                        <div style="font-weight: bold; float:left; justify-content:center">
+                        {{ selectedPlace.name }}
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="grid" style="display: block">
+                            <div class="flex-grid" style="float:left; justify-content:center;display:flex; flex-direction: row; margin-top:10px; margin-bottom: 5px;">
+                                <div *ngIf="selectedPlace.distanceFromUser" class="coli"><i class="material-icons" id="icons">directions_walk</i></div>
+                                <div *ngIf="selectedPlace.distanceFromUser" class="col" style="padding-top:5px;">{{ (selectedPlace.distanceFromUser/1000).toFixed(2) }} km</div>
+                                <div class="coli"><i class="material-icons" id="icons">place</i></div>
+                                <div class="col" style="padding-top:5px;">{{ selectedPlace.address }}</div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div style= "float:left; justify-content:center;"> {{ selectedPlace.additionalInfo }}</div>
+                    </td> 
+                </tr>
+            </table>
+        </mat-card>
+    </div>
+</div>

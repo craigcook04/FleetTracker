@@ -1,0 +1,45 @@
+<!-- Dynamic dropdown list of nearest trolley stops to the user, sorted by proximity with the closest stop name and ETA as the title -->
+<div class="flex-container mat-elevation">
+  <mat-accordion style="width: 100%;">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header style="font-size: 16px">
+        <mat-panel-title>
+          <!-- Closest Trolley Stop name (with error detection) -->
+          <strong style="color:rgba(56, 55, 55, 0.801);">{{ closestStop ? closestStop.name : "Currently Unavailable" }}</strong>
+        </mat-panel-title>
+        <mat-panel-description style="justify-content: center; text-align: center; height: 100%; align-items: center;">
+          <div style="color: rgba(56, 55, 55, 0.801); justify-content: center; text-align: center; align-items: center;">
+            <!-- Trolley ETA for closest trolley stop (with error detection) -->
+            {{ (closestStop && closestStop.info) ? closestStop.info.clockTrolley + " (approx.)"  : 'Currently Unavailable' }}
+          </div>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <hr />
+      <mat-table #table [dataSource]="dataSource" align="center">
+        <ng-container matColumnDef="name" class="flex-item">
+          <!-- Sorted Trolley Stop names (with error detection) -->
+          <mat-header-cell mat-header-cell *matHeaderCellDef style="color:rgba(56, 55, 55, 0.801); justify-content: center; padding-left: 10px; padding-right: 2px;">
+            <h3>Stop Location</h3>
+          </mat-header-cell>
+          <mat-cell *matCellDef="let element" style="color: rgba(56, 55, 55, 0.801); justify-content: center; padding-left: 10px; padding-right: 2px;">
+            {{ element ? element.name : "Currently Unavailable" }}
+          </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="time" class="flex-item">
+          <!-- Sorted Trolley ETA's for each stop (with error detection) -->
+          <mat-header-cell *matHeaderCellDef style="color:rgba(56, 55, 55, 0.801); justify-content: center; padding-right: 10px; padding-left: 2px;">
+            <h3>Approximated Arrival Time</h3>
+          </mat-header-cell>
+          <mat-cell *matCellDef="let element" style="color: rgba(56, 55, 55, 0.801); justify-content: center; padding-right: 10px; padding-left: 2px;">
+            {{ element ? element.time : "Currently Unavailable" }}
+          </mat-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+      <p style="color:rgba(56,55,55,0.801); text-align:center;">The Trolley opens June 30th and closes September 3rd, runs Monday-Sunday from 10:00am-7:00pm for a fee of $2 with the complete loop taking roughly 90 minutes. On June 30th, August 3rd,4th,31st, and September 1st the Trolley hours are extended till 9pm.</p>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+
+<!-- End Stops list -->

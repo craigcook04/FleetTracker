@@ -1,0 +1,35 @@
+<mat-card class="mat-elevation-z10 no-padding" style="max-width: 400px;">
+  <mat-list class="no-padding">
+    <mat-list-item>
+      <div class="container update">
+        <!-- Flex grid layout for responsiveness on mobile -->
+        <div class="flex-grid">
+
+          <div class="col" style="display: grid; grid-column: 1;">
+            <img mat-card-avatar style="vertical-align: middle;" src="./assets/images/repair.png">
+          </div>
+          <div class="col info" style="margin-top:auto; margin-bottom:auto; text-align:center; display: grid; grid-column: 2;">
+            <strong style="color:rgba(56, 55, 55, 0.801); font-size: 20px; ">NOTICE</strong>
+          </div>
+          <div class="colicon" style="margin-top:auto; color:rgba(56, 55, 55, 0.801); margin-bottom:auto; text-align:center; display: grid; grid-column: 3;">
+            <mat-card-actions style="padding:0px; margin: 0px;">
+              <button mat-icon-button cdkFocusInitial (click)="close();" style="padding:0px !important; margin: 0px;">
+                <i class="material-icons" id="icons">clear</i>
+              </button>
+            </mat-card-actions>
+          </div>
+
+        </div>
+      </div>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item class="statement" style="padding-top: 20px; padding-bottom:20px">
+      <div class="container update">
+        <!-- Flex grid layout for responsiveness on mobile -->
+        <div class="col" style="display: stretch; text-align: center;">
+          <span style="color:rgba(56, 55, 55, 0.801);" [innerHTML]=serviceString></span>
+        </div>
+      </div>
+    </mat-list-item>
+  </mat-list>
+</mat-card>

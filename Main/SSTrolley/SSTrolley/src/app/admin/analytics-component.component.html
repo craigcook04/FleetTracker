@@ -1,0 +1,32 @@
+<div class="flex-container" style="height:70vh; position: relative; justify-content: stretch;">
+    <!-- Options Bar -->
+    <div class="flex-left">
+
+        <!-- Stop Menu -->
+        <mat-form-field>
+            <mat-label>Stops</mat-label>
+            <mat-select [formControl]="stopList" disableOptionCentering (selectionChange)="getStopInfo($event)">
+                <mat-option value="All">All</mat-option>
+                <mat-option *ngFor="let stop of stops" [value]="stop.name">{{stop.name}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <!-- Date Picker -->
+        <mat-form-field style="margin-left: auto">
+            <input matInput [matDatepicker]="picker1" placeholder="Start" [formControl]="startDate">
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field style="padding-left: 1em;">
+            <input matInput [matDatepicker]="picker2" placeholder="End" [formControl]="endDate">
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+        </mat-form-field>
+    </div>
+    
+    <!-- Graph -->
+    <div style="height: 100%;max-height:100%;">
+        <canvas id="canvas">{{chart}}</canvas>
+    </div>
+</div>

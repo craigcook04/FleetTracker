@@ -1,0 +1,22 @@
+<!-- Admin Login Form -->
+<div class="admin-login">
+  <mat-card class="mat-elevation-z8">
+    <mat-card-title>
+      Administrator Login
+    </mat-card-title>
+    <mat-card-content>
+      <form #loginForm="ngForm" (ngSubmit)="login()">
+        <mat-form-field class="field" id="username">
+          <input class="username" #username matInput placeholder="Username">
+        </mat-form-field>
+        <br>
+        <mat-form-field class="field" id="password">
+          <input class="password" #password matInput placeholder="Password" type="password">
+        </mat-form-field>
+        <br />
+        <button mat-raised-button #submitButton type="submit" color="primary" class="submit" style="background-color: #f44336">Submit</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
+<!-- End Login Form -->

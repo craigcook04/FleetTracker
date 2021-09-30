@@ -1,0 +1,30 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${env:USERPROFILE}\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.6.19\\cores\\arduino",
+                "${env:USERPROFILE}\\Documents\\Arduino\\libraries\\MKRGSM\\src",
+                "${env:USERPROFILE}\\Documents\\Arduino\\libraries\\Adafruit_GPS_Library",
+                "${env:USERPROFILE}\\Documents\\Arduino\\libraries\\Adafruit_SleepyDog",
+                "${env:USERPROFILE}\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\CMSIS-Atmel\\1.1.0\\CMSIS\\Device\\ATMEL",
+                "${env:USERPROFILE}\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.6.19\\variants\\mkrgsm1400"
+            ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": false,
+                "path": [
+                    "${env:USERPROFILE}\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.6.19\\cores\\arduino",
+                    "${env:USERPROFILE}\\Documents\\Arduino\\libraries\\MKRGSM\\src",
+                    "${env:USERPROFILE}\\Documents\\Arduino\\libraries\\Adafruit_GPS_Library",
+                    "${env:USERPROFILE}\\Documents\\Arduino\\libraries\\Adafruit_SleepyDog",
+                    "${env:USERPROFILE}\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\CMSIS-Atmel\\1.1.0\\CMSIS\\Device\\ATMEL",
+                    "${env:USERPROFILE}\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\samd\\1.6.19\\variants\\mkrgsm1400"
+                ]
+            },
+            "intelliSenseMode": "msvc-x64",
+            "cStandard": "c11",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
+}

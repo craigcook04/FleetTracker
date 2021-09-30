@@ -1,0 +1,126 @@
+/* Desktop Display */
+@media (min-width: 750px) {
+  .map-case {
+    height: 80vh;
+  }
+}
+
+
+@media(min-width:550px){
+  .flex-grid{
+    align-items: stretch;
+
+  }
+  .col {
+    flex-grow:1 1 1 1 1 1 ;
+    vertical-align:middle;
+    padding-top: 5px;
+  }
+  
+  .coli{
+    flex-grow:1 1 1 1 1 1 ;
+    vertical-align:middle;
+  }
+}
+
+/* End Desktop styling */
+
+/* Mobile Display */
+@media (max-width: 750px) {
+  .map-case {
+    height: 70vh;
+  }
+
+  ::ng-deep .ol-viewport {
+    touch-action: pan-x pan-y !important;
+    height: auto !important;
+  }
+
+  ::ng-deep canvas.ol-unselectable {
+    touch-action: pan-x pan-y !important;
+  }
+}
+
+.col {
+  padding-top: 5px;
+  text-align: left;
+  margin-right: 5px;
+  margin-left: 2.5px;
+}
+.coli {
+  max-width: 20px;
+  max-height: 20px;
+  vertical-align: middle !important;
+  margin-right: 2.5px;
+  margin-left: 2.5px;
+}
+
+@media(max-width: 550px){
+  .col {
+    font-size: 13px;
+    max-width: 120px;
+  }
+}
+
+
+/* Constant Styling*/
+
+.map-case {
+  display: flex;
+  flex-flow: column;
+}
+
+.map-case .map-image {
+  flex: 1 1 auto;
+  display: flex;
+  min-height: 0 !important;
+  height: 100%;
+  touch-action: pan-x pan-y !important;
+}
+
+.map-case {
+  flex: 0 1 auto;
+  position: relative;
+}
+
+.map-desc {
+  flex: 0 1 auto;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.tooltip-card {
+  padding: 10px;
+  margin: 2.5px;
+}
+
+.info-card {
+  box-shadow: 0 -8px 8px -8px rgba(0, 0, 0, 0.3);
+}
+
+::ng-deep .reset-view {
+  top: 70px;
+  left: .5em;
+}
+
+::ng-deep .ol-touch .reset-view {
+  top: 85px;
+}
+/* End Constant styling */
+
+.no-margin{
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left:0px;
+  margin-right:0px;
+
+}
+.no-padding{
+  padding: 0px 0px 0px 0px
+}
+
+.map-case-embed {
+  height: 100vh;
+}

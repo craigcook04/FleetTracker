@@ -1,0 +1,48 @@
+<!-- Trolley Metrics dropdown, updated in real time -->
+<div class="dropdown">
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <strong style="color:rgba(56, 55, 55, 0.801);">Historical Trolley Data</strong>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <hr />
+      <mat-list class="no-padding">
+        <mat-list-item class="no-padding">
+          <div class="container details">
+            <!-- Flex grid layout for responsiveness on mobile -->
+            <div class="flex-grid">
+              <div class="col info">
+                <!-- Accumulated passengers boarded (with error detection) -->
+                <strong style="color:rgba(56, 55, 55, 0.801); padding-right: 15px;">Total Passengers</strong>
+              </div>
+              <div class="col" style="text-align: right;">
+                <span style="color:rgba(56, 55, 55, 0.801);">{{ trolley ? trolley.totalPassengers : "Currently Unavailable" }} (approx.)</span>
+              </div>
+            </div>
+            <!-- End Flex grid -->
+          </div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item class="no-padding">
+          <div class="container details">
+            <!-- Flex grid layout for responsiveness on mobile -->
+            <div class="flex-grid">
+              <div class="col info">
+                <!-- Accumulated distance traveled by the trolley (with error detection) -->
+                <strong style="color:rgba(56, 55, 55, 0.801); padding-right: 15px;">Distance Traveled</strong>
+              </div>
+              <div class="col" style="text-align: right;">
+                <span style="color:rgba(56, 55, 55, 0.801);">{{ trolley ? (trolley.totalDistance / 1000.0).toFixed(2) + " km" : "Currently Unavailable" }} (approx.)</span>
+              </div>
+            </div>
+            <!-- End Flex grid -->
+          </div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+      </mat-list>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+<!-- End Trolley metrics -->

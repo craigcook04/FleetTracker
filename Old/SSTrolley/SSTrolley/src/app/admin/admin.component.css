@@ -1,0 +1,13 @@
+.textArea{
+    font-family:Roboto,"Helvetica Neue",sans-serif !important; 
+}
+
+/* CSS to change 'Warn' color */
+ 
+::ng-deep .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+    background-color: #f44336 !important;
+}
+
+::ng-deep .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+    background-color: #fa7b72 !important;
+}

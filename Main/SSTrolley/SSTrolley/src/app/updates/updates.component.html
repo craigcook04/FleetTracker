@@ -1,0 +1,39 @@
+<!-- Static card showing trolley details, updated in real time -->
+<mat-card class="mat-elevation-z2 no-padding">
+  <mat-list class="no-padding">
+    <mat-list-item>
+      <div class="container update">
+        <!-- Flex grid layout for responsiveness on mobile -->
+        <div class="flex-grid">
+          <div class="col info">
+            <!-- Number of passenger seats available (with error detection) -->
+            <strong style="color:rgba(56, 55, 55, 0.801);">Seats Available</strong>
+          </div>
+          <div class="col">
+            <span style="color: rgba(56, 55, 55, 0.801);">{{ trolley ? (trolley.maxPassengers - trolley.passengerCount) + " (approx.)" : "Currently Unavailable" }}</span>
+          </div>
+        </div>
+        <!-- End Flex grid -->
+      </div>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item >
+      <div class="container update">
+        <!-- Flex grid layout for responsiveness on mobile -->
+        <div class="flex-grid">
+          <div class="col info">
+            <!-- Next Trolley Stop name (with error detection) -->
+            <strong style="color:rgba(56, 55, 55, 0.801);">Next Stop</strong>
+          </div>
+          <div class="col">
+            <span style="color:rgba(56, 55, 55, 0.801);">{{ nextStop ? nextStop.name : "Currently Unavailable" }}</span>
+          </div>
+        </div>
+        <!-- End Flex grid -->
+      </div>
+    </mat-list-item>
+  </mat-list>
+</mat-card>
+<!-- End updates card -->
+
+

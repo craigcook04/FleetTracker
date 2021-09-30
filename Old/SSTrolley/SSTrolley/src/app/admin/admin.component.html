@@ -1,0 +1,50 @@
+<mat-card style="margin: 10px">
+    <mat-card-content>
+      <h2 class="status">Trolley Service Status</h2>
+        <section class="checkBoxes">
+            <mat-slide-toggle #serviceToggle [disabled]="disabled" style="color:rgba(56, 55, 55, 0.801);font-size: 14px !important;">{{serviceStatusString}}</mat-slide-toggle>
+        </section>
+        <textarea class="textArea" #serviceText [value]=serviceString style="color:rgba(56, 55, 55, 0.801);border-color:rgba(165, 162, 162, 0.541) !important; border: 2px solid; margin-top: 20px; margin-bottom: 10px; padding:10px; min-width: 200px; width: 350px; max-width: calc(100% - 24px); overflow: auto; font-size: 14px; "></textarea>
+        <br/>
+        <button #saveButton class="mat-elevation-z4" mat-raised-button color="link" (click)="save()" style="color:rgba(56, 55, 55, 0.801);margin-top: 10px; font-size: 14px">Save</button>
+    </mat-card-content>
+</mat-card>
+
+<mat-card style="margin: 10px">
+    <mat-card-content>
+        <h2 class="status">Trolley Info</h2>
+        <button #infoButton class="mat-elevation-z4" mat-raised-button color="link" (click)="getLocationData()" style="color:rgba(56, 55, 55, 0.801);margin-top: 10px; font-size: 14px;">Get Location Data</button>
+    </mat-card-content>
+</mat-card>
+
+
+<mat-card style="margin: 10px; min-width: 445px;">
+    <mat-card-content>
+        <h2 class="status">Ad Management</h2>
+        <ul *ngIf=ads style="padding-left: 20px">
+            <li *ngFor="let ad of ads" style="list-style-type: none">
+                <div style="max-width: 550px; min-width: 400px; min-height: 50px; margin-bottom: 10px;">
+                    <div style="position: relative; margin-bottom: 5px;">
+                        <img src="{{'./assets/images/ads/' + ad.name}}" style="width: 100%; height: auto;" class="mat-elevation-z4"/>
+                        <button mat-mini-fab class="mat-elevation-z6" style="position: absolute; right: 5px; bottom: 8px;" (click)="deleteAd(ad)">
+                            <i class="material-icons">delete_outline</i>
+                        </button>
+                    </div>
+
+                    <div style="display: flex">
+                        <mat-form-field style="flex: 1">
+                            <input matInput type="text" placeholder="Link URL" [(ngModel)]="ad.url">
+                            <button mat-button *ngIf="ad.url" matSuffix mat-icon-button aria-label="Clear" (click)="ad.url=''">
+                                <mat-icon>close</mat-icon>
+                            </button>
+                        </mat-form-field>
+                        <button class="mat-elevation-z4" mat-raised-button color="link" (click)="updateAd(ad);" style="height: 36px; margin-left: 10px; margin-top: 5px; color:rgba(56, 55, 55, 0.801); font-size: 14px;">Save</button>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+        <input #fileInput type="file" accept="image/*" style="display: none;" (change)="uploadAd();" multiple/>
+        <button #uploadButton class="mat-elevation-z4" mat-raised-button color="link" (click)="fileInput.click();" style="color:rgba(56, 55, 55, 0.801); font-size: 14px; margin-top: 5px;">Upload Ad</button>
+    </mat-card-content>
+</mat-card>

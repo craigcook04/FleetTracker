@@ -1,0 +1,93 @@
+<div [ngClass]="embed ? 'content-embed' : 'content'">
+  <!-- Trolley route highlighted on Map -->
+
+  <div id="map" class="map">
+    <div *ngIf="ads && !embed" class="centred" style="margin-bottom: 15px;">
+      <!-- If ad has an associated URL then render the link-->
+      <a *ngIf="!ads[0].url == ''" href="{{ads[0].url}}" target="_blank">
+        <img src="{{'./assets/images/ads/' + ads[0].name}}" class="ad mat-elevation-z2"/>
+      </a>
+      <!-- If ad has no associated URL then render only the image-->
+      <img *ngIf="ads[0].url == ''" src="{{'./assets/images/ads/' + ads[0].name}}" class="ad mat-elevation-z2" />
+    </div>
+    <app-map #map></app-map>
+  </div>
+  <!-- End Map -->
+  
+  <!-- Double column grid layout for dekstop that is flexible for mobile displays -->
+  <div *ngIf="!embed" class="container">
+    <div class="content-box">
+      <!--trolley service status card-->
+      <div [hidden]="inService">
+        <app-service-status #serviceStatus></app-service-status>
+      </div>
+
+      <div *ngIf="ads && !embed" class="centred" style="margin-top: 20px;">
+        <!-- If ad has an associated URL then render the link-->
+        <a *ngIf="!ads[1].url == ''" href="{{ads[1].url}}" target="_blank">
+          <img src="{{'./assets/images/ads/' + ads[1].name}}" class="ad mat-elevation-z2"/>
+        </a>
+        <!-- If ad has no associated URL then render only the image-->
+        <img *ngIf="ads[1].url == ''" src="{{'./assets/images/ads/' + ads[1].name}}" class="ad mat-elevation-z2" />
+      </div>
+      <div class="flex-grid">
+        <div class="col">
+          <div class="list">
+            <br />
+            <hr />
+            <br />
+            <!-- Trolley Info section 1, from StopsComponent -->
+            <h2>{{ position ? "Stops Nearest You" : "Stops" }}</h2>
+            <app-stops #stops></app-stops>
+            <!-- End StopsComponent -->
+          </div>
+        </div>
+        <div class="col">
+          <div class="trolley-info">
+            <br />
+            <hr />
+            <br />
+            <section *ngIf="inService">
+              <!-- Trolley Info section 2, from UpdatesComponent -->
+              <h2>Live Trolley Updates</h2>
+              <app-updates #updates></app-updates>
+              <!-- End UpdatesComponent -->
+              <br />
+              <br />
+              <hr />
+              <br />
+            </section>
+            <!-- Trolley Info section 3, from DetailsComponent -->
+            <h2>Additional Trolley Metrics</h2>
+            <app-details #details></app-details>
+            <!-- End DetailsComponent -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End grid layout -->
+</div>
+
+<!-- Hatch footer with links -->
+<div *ngIf="!embed" class="flex-container">
+    <mat-toolbar class="mat-elevation-z12 footer">
+        <!-- Link to SSCC Home page -->
+        <a href="http://www.sstrolley.ca/" id="homepage">Home</a>
+        <!-- Link to Hatch home page -->
+        <div>
+          <a href="https://www.rogers.ca/">
+            <img class="positive-logo" src="./assets/images/rogers.png" />
+          </a>
+          <a href="https://www.hatch.com/">
+            <img class="positive-logo" src="./assets/images/positive-change.png" />
+          </a>
+          <a href="https://www.websmart.ca/">
+            <img class="positive-logo" src="./assets/images/websmart.png" />
+          </a>
+        </div>
+        <!-- Link to SSCC Events Contact page -->
+        <a href="http://www.saugeenshoreschamber.ca/events/" id="events">Events</a>
+    </mat-toolbar>
+</div>
+<!-- End Hatch footer -->

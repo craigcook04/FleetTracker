@@ -1,0 +1,198 @@
+/* Desktop Display */
+@media (min-width: 750px) {
+    .flex-grid {
+        display: flex;
+        justify-content: center;
+    }
+    .content {
+        width: 90%;
+        box-sizing: border-box;
+        border-radius: 2px;
+        margin: 0 auto;
+    }
+    .content-box {
+        margin: 1em 1em;
+    }
+    #homepage {
+        font-size: 16px;
+        color: black;
+    }
+    #events {
+        font-size: 16px;
+        color: black;
+    }
+    .positive-logo {
+      max-height: 60px;
+      max-width: 60px;
+      padding-left: 1em;
+      padding-right: 1em;
+    }
+    h2 {
+        font-size: 20px;
+        color: rgba(56, 55, 55, 0.801);
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        margin-top: 0px;
+        padding: 0px;
+    }
+    .near-you {
+        font-size: 16px
+    }
+    .list {
+        margin: 0 auto;
+        width: 95%;
+        float: left;
+    }
+    .trolley-info {
+        margin: 0 auto;
+        width: 95%;
+        float: right;
+    }
+    hr {
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 0px;
+        margin: 0px;
+    }
+    .disclaimer {
+        width: 60%;
+        margin: auto;
+    }
+    h5 {
+        color: rgba(0, 0, 0, 0.7);
+        margin: 1em auto;
+        text-align: center;
+    }
+    p {
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 12px;
+        text-align: center;
+    }
+}
+
+/* End Desktop styling*/
+
+/* Mobile Display */
+@media (max-width: 750px) {
+    .flex-grid {
+        display: block;
+        justify-content: center;
+    }
+    .content {
+        width: 90%;
+        box-sizing: border-box;
+        border-radius: 2px;
+        margin: 0 auto;
+    }
+    .content-box {
+        margin: 1em 0em;
+    }
+    #homepage {
+        font-size: 14px;
+        color: black;
+    }
+    #events {
+        font-size: 14px;
+        color: black;
+    }
+  .positive-logo {
+    max-height: 35px;
+    max-width: 35px;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+    span {
+        font-size: 14px;
+    }
+    .near-you {
+        font-size: 12px
+    }
+    .list {
+        width: 95%;
+        margin-top: 0;
+        margin-bottom: 1em;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .trolley-info {
+        width: 95%;
+        margin: 1em auto;
+    }
+    h2 {
+        font-size: 17px;
+        color: rgba(56, 55, 55, 0.801);
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        margin-top: 0px;
+        padding: 0px;
+    }
+    hr {
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 0px;
+        margin: 0px;
+    }
+    .disclaimer {
+        width: 80%;
+        margin: auto;
+    }
+    h5 {
+        color: rgba(0, 0, 0, 0.7);
+        margin: 0.5em auto;
+        text-align: center;
+    }
+    p {
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 10px;
+        text-align: center;
+    }
+}
+
+/* End Mobile styling*/
+
+/* Constant Styling */
+
+.footer {
+    justify-content: space-between;
+    padding-left: 1em;
+    padding-right: 1em;
+    background-color: rgb(255, 255, 255);
+}
+
+.footer-bottom {
+    justify-content: space-between;
+    padding-left: 1em;
+    padding-right: 1em;
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    bottom: 0;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.col {
+    flex: 1;
+}
+
+.positive-logo {
+    justify-content: center !important;
+    vertical-align: middle;
+}
+
+.ad {
+    max-width: 100%;
+    height: auto;
+}
+
+.centred {
+    text-align: center;
+}
+
+.content-embed {
+    width: 100%;
+    border-radius: 0px;
+    margin: 0;
+    padding: 0;
+}
+
+/* End Constant styling*/

@@ -1,0 +1,5 @@
+{
+    "sketch": "gps_cell.ino",
+    "board": "arduino:samd:mkrgsm1400",
+    "port": "COM15"
+}

@@ -1,0 +1,58 @@
+.admin-login {
+    display: flex;
+    justify-content: center;
+    margin: 10em auto 3em;
+    width: 80%;
+}
+
+.field {
+    display: inline-block;
+}
+
+
+/* #username{
+margin-right:2% !important;
+margin-left:0% !important;
+}
+#password{
+margin-left:2% !important;
+margin-right:0% !important;
+}  */
+
+.submit {
+    
+    width: 40%;
+    margin-right: 1% !important;
+    margin-left: 59% !important;
+}
+/* End Constant styling*/
+
+::ng-deep .mat-input-element {
+    caret-color: #f44336 !important;
+}
+
+::ng-deep .mat-form-field-label .ng-tns-c4-0 .mat-empty .mat-form-field-autofill-control .cdk-text-field-autofill-monitored {
+    color: #f44336 !important;
+}
+
+
+input::placeholder {
+    color: #f44336 !important;
+  }
+
+
+  ::ng-deep .mat-form-feild-infix{
+    color: #f44336 !important;
+  }
+
+::ng-deep .mat-input-container.mat-input-focused label {
+    color:  #f44336 !important;
+  }
+
+::ng-deep .mat-focused .placeholder {
+    color:#f44336 !important;
+}
+
+::ng-deep label.mat-input-placeholder{
+    color:#f44336 !important;
+}
